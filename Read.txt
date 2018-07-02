@@ -1,0 +1,30 @@
+-> Main Features
+	-Blog Posts
+	Show Videos From youtube:
+	-Unique to webstie
+	-Forum/Discussions
+	-Posts for forums
+
+
+-> Technology Stack
+	-laravel (Framework)
+	-Vue.js
+	-ajax/jquery/axios
+	-Sass
+	-Nginx
+	-Email services
+
+-> Information Architechture
+	-Learn
+		*courses/series
+		*Blog posts
+		*community Posts	
+	-Discuss
+		*Forums
+		*Vote Upcoming
+	-Share
+		*Reditt Style Posts
+		*Resources(Share resources)
+
+-> Learn Section
+	-Video Posts & Blog Posts
