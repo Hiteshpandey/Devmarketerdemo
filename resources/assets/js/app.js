@@ -13,7 +13,7 @@ import Buefy from 'buefy';
 Vue.use(Buefy);
 
 let app = new Vue({
-    el: '#app',
+    el: '#app', //element
     data: {}
 });
 

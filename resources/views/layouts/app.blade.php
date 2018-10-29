@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar has-shadow">
+        {{--  <nav class="navbar has-shadow">
             <div class="container">
                 <div class="navbar-start">
                     <a class="navbar-item" href="{{route('home')}}">
@@ -50,7 +50,9 @@
                     @endif
                 </div>
             </div>
-        </nav>
+        </nav>  --}}
+
+        @include('_includes.nav.main')
         <main class="py-4">
             @yield('content')
         </main>
