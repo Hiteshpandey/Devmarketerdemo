@@ -1,0 +1,10 @@
+.side-menu{
+    position: fixed;
+    height: 100vh;
+    width: 200px;
+    background-color: white;
+    overflow-y: auto;
+    .menu .menu-label{
+        margin-left: 5px;
+    }
+}
