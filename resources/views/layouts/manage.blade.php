@@ -10,9 +10,12 @@
 
     <title>Management Panel</title>
 
+<<<<<<< HEAD
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+=======
+>>>>>>> bb6f347a3d54edf61cab62cbff3239efb97dd4f1
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
@@ -24,8 +27,17 @@
     @include('_includes.nav.main')
 
     @include('_includes.nav.manage')
+<<<<<<< HEAD
     <div id="app">
         @yield('content')
     </div>
+=======
+    <div class="management-area" id="app">
+        @yield('content')
+    </div>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
+>>>>>>> bb6f347a3d54edf61cab62cbff3239efb97dd4f1
 </body>
 </html>

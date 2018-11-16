@@ -85,6 +85,7 @@ button.navbar-item{
                 margin: 5px 0;
                 padding: 5px 0 5px 15px;
                 display: block;
+                color:$l-grey;
 
                 &:hover{
                     background-color: whitesmoke;
@@ -101,4 +102,35 @@ button.navbar-item{
     &.is-open .dropdown-menu{
         display: block;
     }
-} 
+}
+
+//for fileds override
+
+.input:focus, .taginput .taginput-container.is-focusable:focus, .input.is-focused, .taginput .is-focused.taginput-container.is-focusable, .input:active, .taginput .taginput-container.is-focusable:active, .input.is-active, .taginput .is-active.taginput-container.is-focusable, .textarea:focus, .textarea.is-focused, .textarea:active, .textarea.is-active{
+    border-color: #00d1b2;
+}
+
+// pagination override
+
+.pagination-link.is-current{
+    background-color: #00d1b2;
+    border-color: #00d1b2;
+}
+
+.pagination-previous:focus, .pagination-next:focus, .pagination-link:focus {
+    border-color: #00d1b2;
+    color: #00d1b2;
+}
+
+.pagination-previous:hover, .pagination-next:hover, .pagination-link:hover {
+    border-color: #00d1b2;
+    color: #00d1b2;
+}
+
+.pagination {
+    margin: 1rem;
+}
+
+.pagination-previous, .pagination-next, .pagination-link {
+    color: #00d1b2;
+}
