@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 use App\User;
 use Session;
-use DB;
 use Hash;
 
 class UserController extends Controller
@@ -109,7 +108,7 @@ class UserController extends Controller
     {
         $this->validate($request,[
             'name'=>'required|max:225',
-            'email'=>'required|email|unique:user,email,'.$id, //unique email but ignore the current id
+            'email'=>'required|email|unique:users,email,'.$id //unique email but ignore the current id
         ]);
         $user = User::findorFail($id);
         $user->name = $request->name;
@@ -124,8 +123,8 @@ class UserController extends Controller
                 $str .= $alphabet[random_int(0,$max)];
             }
             $user->password = Hash::make($str);
-        }elseif($request->password == 'manual'){
-            $user->password = Hash::make($password);
+        }elseif($request->password_options == 'manual'){
+            $user->password = Hash::make($request->password);
         }
 
 
