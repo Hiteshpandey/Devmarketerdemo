@@ -26,9 +26,15 @@ Route::get('/logout', 'HomeController@logout');
 Route::prefix('manage')->middleware('role:superadministrator|administrator|editor|author|contributor')->group(function(){
     Route::get('/','ManageController@index');
     Route::get('/dashboard',"ManageController@dashboard")->name('manage.dashboard');
+<<<<<<< HEAD
+=======
     Route::resource('/users','UserController');
+<<<<<<< HEAD
     Route::resource('/permissions', 'PermissionController',['except'=>'destroy']); // remove destroy route
     Route::resource('/roles', 'RoleController',['except'=>'destroy']); // remove destroy route
+=======
+>>>>>>> bb6f347a3d54edf61cab62cbff3239efb97dd4f1
+>>>>>>> 5020965a7382a3b0ec480d303c40ab8f88a49f9a
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
