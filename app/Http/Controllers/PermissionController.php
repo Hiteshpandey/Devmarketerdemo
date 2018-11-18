@@ -41,7 +41,7 @@ class PermissionController extends Controller
         {
             $this->validate($request,[
                 'display_name' => 'required|max:255',
-                'slug' => 'required|max:255|unique:permissions,name', //alphadash means alpha numeric including dashesh and underscores
+                'slug' => 'required|max:255|alpha_dash|unique:permissions,name', //alphadash means alpha numeric including dashesh and underscores
                 'description' => 'required|max:255'
                 ]);
 

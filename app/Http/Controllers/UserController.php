@@ -8,7 +8,6 @@ use App\User;
 use Session;
 use Hash;
 
-
 class UserController extends Controller
 {
     /**
