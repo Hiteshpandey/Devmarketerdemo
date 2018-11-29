@@ -30,5 +30,19 @@
                     </p>
             </div>
         </div>
+
+        <div class="columns">
+            <div class="column">
+                <div>
+                    <label for="roles" class="label m-t-10">Roles</label>
+                </div>
+                <div>{{$user->roles->count() == 0 ? 'This user has not been assigned any roles yet!' : ''}}</div>
+                @foreach ($user->roles as $item)
+                <ul>
+                    <li>{{$item->display_name}}<sub>{{$item->description}}</sub></li>
+                </ul>
+                @endforeach
+            </div>
+        </div>
 </div>
 @endsection

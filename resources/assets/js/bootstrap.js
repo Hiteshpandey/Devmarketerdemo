@@ -7,10 +7,12 @@
 /* Custom Added*/
   window._ = require("lodash");
 
-  try{
-    window.$ = window.JQuery = require('jquery');
-  }
-catch(e){}
+//   try{
+//     window.$ = window.JQuery = require('jquery');
+//   }
+// catch(e){}
+
+//getting rid of jquery above
 
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-Width'] = 'XMLHttpRequest';

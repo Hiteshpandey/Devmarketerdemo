@@ -18,8 +18,10 @@ let app = new Vue({
 });
 */
 
-$(document).ready(function(){
-    $('button.dropdown').hover(function(){
-        $(this).toggleClass('is-open');
-    });
-})
+require('./manage.js');
+
+// $(document).ready(function(){
+//     $('button.dropdown').hover(function(){
+//         $(this).toggleClass('is-open');
+//     });
+// })

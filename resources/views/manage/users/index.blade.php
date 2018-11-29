@@ -22,7 +22,7 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>Date Created</th>
-                    <th>Actions</th>
+                    <th colspan="2">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,6 +32,7 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->created_at}}</td>
+                    <td><a href="{{route('users.show',$user->id)}}" class="button is-primary">View</a></td>
                     <td><a href="{{route('users.edit',$user->id)}}" class="button is-outlined">Edit</a></td>
                 </tr>
                 @endforeach

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Session;
 use Hash;
+use App\Role;
 
 class UserController extends Controller
 {
@@ -81,7 +82,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findorFail($id); // return 403 error if not found
+        // $permission = Permission::where('id',$id)->with('users')->first();
+        //$user = User::findorFail($id); // return 403 error if not found
+        $user = User::where('id',$id)->with('roles')->first(); // eager loading
         return view("manage.users.show",["user"=>$user]);
     }
 
@@ -93,8 +96,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findorFail($id);
-        return view("manage.users.edit",["user"=>$user]);
+        $roles = Role::all();
+        $user = User::where('id',$id)->with('roles')->first(); // eager loading
+        return view("manage.users.edit",["user"=>$user,"roles"=>$roles]);
     }
 
     /**
@@ -127,14 +131,17 @@ class UserController extends Controller
             $user->password = Hash::make($request->password);
         }
 
+        $user->save();
 
-        if($user->save()){
-            return redirect()->route('users.show',$id);
-        }
-        else{
-            Session::flash('error','There was a problem with saving these detials');
-            return redirect()->route('users.edit',$id);
-        }
+        $user->roles()->sync(explode(',',$request->roles)); // we pass array of id's for syncing of role
+        return redirect()->route('users.show',$id);
+        // if($user->save()){
+        //     return redirect()->route('users.show',$id);
+        // }
+        // else{
+        //     Session::flash('error','There was a problem with saving these detials');
+        //     return redirect()->route('users.edit',$id);
+        // }
     }
 
     /**

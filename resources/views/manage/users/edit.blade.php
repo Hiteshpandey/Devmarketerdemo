@@ -9,9 +9,9 @@
             </div>
         </div>
         <hr class="m-t-10">
+        <form action="{{route('users.update',$user->id)}}" method="POST">
         <div class="columns">
             <div class="column">
-                <form action="{{route('users.update',$user->id)}}" method="POST">
                     {{ method_field('PUT') }}
                     {{ csrf_field() }}
                     <div class="field">
@@ -43,10 +43,29 @@
                     <p class="control">
                         <input type="password" class="input" name="password" id="password" v-if="password_options == 'manual'" placeholder="Manually Add A Password">
                     </p>
-                    <button class="is-success button">Save User Detials</button>
-                </form>
             </div>
+            <div class="column">
+                <div class="field">
+                    <label for="name" class="label m-t-10">Roles</label>
+                </div>
+                <input type="hidden" name="roles" :value="rolesSelected" />
+                {{-- Getting id of all roles to compare with id of current user id roles if yes then this will be checked automatically --}}
+                @foreach ($roles as $role)
+                <div class="field">
+                    <b-checkbox :value="true" v-model="rolesSelected" type="is-success" native-value="{{$role->id}}" > 
+                        {{$role->display_name}}
+                    </b-checkbox>
+                </div>
+                @endforeach
+            </div>
+    </div>
+    <div class="columns">
+        <div class="column has-text-centered">
+                <hr/>
+            <button class="is-success button" style="width:30%">Save User Detials</button>
         </div>
+    </div>
+</form>
     
 </div>
              
@@ -58,7 +77,8 @@
     let app = new Vue({
         el: '#app', //element
         data: {
-            password_options : 'keep'
+            password_options : 'keep',
+            rolesSelected: {!! $user->roles->pluck('id') !!} // get all ids of the current user role to compare with id of all roles
         }
     });
   </script>  

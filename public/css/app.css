@@ -1074,7 +1074,7 @@ a.has-text-dark:focus {
 
 a.has-text-primary:hover,
 a.has-text-primary:focus {
-  color: #009e86 !important;
+  color: #009e87 !important;
 }
 
 .has-background-primary {
@@ -11102,12 +11102,12 @@ label.panel-block:hover {
 }
 
 .hero.is-primary.is-bold {
-  background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%);
+  background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e6eb 100%);
 }
 
 @media screen and (max-width: 768px) {
   .hero.is-primary.is-bold .navbar-menu {
-    background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e7eb 100%);
+    background-image: linear-gradient(141deg, #009e6c 0%, #00d1b2 71%, #00e6eb 100%);
   }
 }
 
@@ -15425,7 +15425,7 @@ label.panel-block:hover {
 }
 
 .datepicker .datepicker-table .datepicker-body.has-events .datepicker-cell.is-selected .events .event.is-primary {
-  background-color: #1fffdd;
+  background-color: #1fffde;
 }
 
 .datepicker.is-small {
@@ -17556,91 +17556,6 @@ a.is-muted:hover {
   color: #7a7a7a !important;
 }
 
-button.navbar-item {
-  background-color: white;
-  border: none;
-  color: #7a7a7a;
-  outline: none;
-}
-
-button.navbar-item:hover {
-  color: #363636;
-}
-
-button.navbar-item.is-active {
-  color: #363636;
-}
-
-button.navbar-item.is-tab {
-  border-bottom: 1px solid transparent;
-  border-top: 1px solid transparent;
-  padding-bottom: calc(0.75rem - 1px);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: calc(0.75rem - 1px);
-}
-
-button.navbar-item:hover {
-  border-bottom-color: #00d1b2;
-  border-top-color: transparent;
-}
-
-button.navbar-item.is-active {
-  border-bottom: 3px solid #00d1b2;
-  color: #00d1b2;
-  padding-bottom: calc(0.75rem - 3px);
-}
-
-.navbar {
-  height: 4.5rem;
-}
-
-.navbar-item {
-  max-height: 4.8rem;
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown .dropdown-menu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  z-index: 1000;
-  background-color: white;
-  min-width: 200px;
-  text-align: left;
-  -webkit-box-shadow: 0 0 1px rgba(57, 70, 78, 0.15), 0 20px 55px -8px rgba(57, 70, 78, 0.25);
-          box-shadow: 0 0 1px rgba(57, 70, 78, 0.15), 0 20px 55px -8px rgba(57, 70, 78, 0.25);
-}
-
-.dropdown .dropdown-menu li.separator {
-  border-top: 1px solid #ccc;
-  margin: 5px 0;
-}
-
-.dropdown .dropdown-menu li > a {
-  margin: 5px 0;
-  padding: 5px 0 5px 15px;
-  display: block;
-  color: #7a7a7a;
-}
-
-.dropdown .dropdown-menu li > a:hover {
-  background-color: whitesmoke;
-}
-
-.dropdown.is-aligned-right .dropdown-menu {
-  right: 0;
-  left: auto;
-}
-
-.dropdown.is-open .dropdown-menu {
-  display: block;
-}
-
 .input:focus,
 .taginput .taginput-container.is-focusable:focus,
 .taginput .taginput-container.is-focusable:focus,
@@ -17686,6 +17601,21 @@ button.navbar-item.is-active {
 .pagination-previous,
 .pagination-next,
 .pagination-link {
+  color: #00d1b2;
+}
+
+.menu-list a.is-active {
+  background-color: #00d1b2;
+}
+
+.navbar-item.is-tab:hover {
+  border-bottom-color: #00d1b2;
+}
+
+a.navbar-item:hover,
+a.navbar-item.is-active,
+.navbar-link:hover,
+.navbar-link.is-active {
   color: #00d1b2;
 }
 
@@ -18115,6 +18045,18 @@ example <div class="p-t-10"  --- padding top 10px
 
 .flex-container {
   margin: 10px 25px;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-list li ul {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .navbar-laravel {
