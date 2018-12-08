@@ -38,12 +38,17 @@
     }
 }
 
-.management-area{
+.management-area {
+top: 4rem;
+right: 0;
+
+    @include desktop {
     position: absolute;
-    top: 5rem;
-    left: 210px;
-    right: 0;
+    left: 200px;
+    }
+
 }
+    
 
 .flex-container{
     margin: 10px 25px;
@@ -59,3 +64,73 @@
     margin-top: 0;
     margin-bottom: 0;
 }
+
+.navbar-burger {
+    border: none;
+}
+
+.title.is-admin{
+    font-weight: 300;
+}
+
+
+.widget-area{
+    border-bottom: 1px solid whitesmoke;
+    min-height: 75px;
+    padding:10px; 
+    &.author-widget{
+        .selected-author{
+            display: flex;
+            align-items: flex-start;
+            img{
+                float:left;
+                border-radius: 25px;
+            }
+
+            .author{
+                margin: auto 0 auto 10px;
+                .subtitle{
+                    font-size: 0.8em;
+                }
+                h4{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    &.post-status-widget { 
+        .status{
+            display: flex;
+            align-items: flex-start;
+            .status-icon{
+                width: 50px;
+                text-align: center;
+                .icon{
+                    margin: 0 auto;
+                }
+            }
+
+            .status-details{
+                margin-left: 10px;
+                p{
+                    font-size: .8em;
+                }
+                h4{
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    &.publish-button-widget{
+        display: flex;
+        min-height: 50px;
+
+        .primary-action-button,.secondary-action-button{
+            flex-grow: 1;
+            margin: 0 5px;
+        }
+    }
+}
+

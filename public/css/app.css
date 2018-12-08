@@ -17544,7 +17544,7 @@ label.panel-block:hover {
 
 html,
 body {
-  background-color: whitesmoke;
+  background-color: #fff;
   height: 100%;
 }
 
@@ -18080,10 +18080,15 @@ example <div class="p-t-10"  --- padding top 10px
 }
 
 .management-area {
-  position: absolute;
-  top: 5rem;
-  left: 210px;
+  top: 4rem;
   right: 0;
+}
+
+@media screen and (min-width: 1088px) {
+  .management-area {
+    position: absolute;
+    left: 200px;
+  }
 }
 
 .flex-container {
@@ -18100,6 +18105,91 @@ example <div class="p-t-10"  --- padding top 10px
 .menu-list li ul {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.navbar-burger {
+  border: none;
+}
+
+.title.is-admin {
+  font-weight: 300;
+}
+
+.widget-area {
+  border-bottom: 1px solid whitesmoke;
+  min-height: 75px;
+  padding: 10px;
+}
+
+.widget-area.author-widget .selected-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.widget-area.author-widget .selected-author img {
+  float: left;
+  border-radius: 25px;
+}
+
+.widget-area.author-widget .selected-author .author {
+  margin: auto 0 auto 10px;
+}
+
+.widget-area.author-widget .selected-author .author .subtitle {
+  font-size: 0.8em;
+}
+
+.widget-area.author-widget .selected-author .author h4 {
+  font-weight: 600;
+}
+
+.widget-area.post-status-widget .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.widget-area.post-status-widget .status .status-icon {
+  width: 50px;
+  text-align: center;
+}
+
+.widget-area.post-status-widget .status .status-icon .icon {
+  margin: 0 auto;
+}
+
+.widget-area.post-status-widget .status .status-details {
+  margin-left: 10px;
+}
+
+.widget-area.post-status-widget .status .status-details p {
+  font-size: .8em;
+}
+
+.widget-area.post-status-widget .status .status-details h4 {
+  font-weight: 600;
+}
+
+.widget-area.publish-button-widget {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 50px;
+}
+
+.widget-area.publish-button-widget .primary-action-button,
+.widget-area.publish-button-widget .secondary-action-button {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin: 0 5px;
 }
 
 .navbar-laravel {
