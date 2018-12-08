@@ -1024,7 +1024,7 @@ window._ = __webpack_require__(12);
 //   }
 // catch(e){}
 
-//getting rid of jquery above
+//getting rid of jquery above 
 
 window.axios = __webpack_require__(14);
 window.axios.defaults.headers.common['X-Requested-Width'] = 'XMLHttpRequest';
@@ -30308,6 +30308,12 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports) {
 
 var accordions = document.getElementsByClassName('has-submenu');
+var slideoutbutton = document.getElementById('slideout-button');
+
+slideoutbutton.onclick = function () {
+    this.classList.toggle("is-active");
+    document.getElementById("admin_sidemenu").classList.toggle('is-active');
+};
 
 for (var i = 0; i < accordions.length; i++) {
     if (accordions[i].classList.contains('is-active')) {

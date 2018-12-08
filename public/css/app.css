@@ -17619,6 +17619,10 @@ a.navbar-item.is-active,
   color: #00d1b2;
 }
 
+.navbar-burger {
+  border: none;
+}
+
 /*
 This .scss loop will create "margin helpers" and "padding helpers" for use in your web projects.
 It will generate several classes such as:
@@ -18024,16 +18028,55 @@ example <div class="p-t-10"  --- padding top 10px
   width: 100%;
 }
 
-.side-menu {
+/*.side-menu{
+    position: fixed;
+    height: 100vh;
+    width: 200px;
+    background-color: white;
+    overflow-y: auto;
+    .menu .menu-label{
+        margin-left: 5px;
+    }
+}*/
+
+#admin_sidemenu {
   position: fixed;
-  height: 100vh;
+  top: 4rem;
+  left: -200px;
+  bottom: 0;
   width: 200px;
   background-color: white;
-  overflow-y: auto;
+  overflow-y: scroll;
+  -webkit-transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
 }
 
-.side-menu .menu .menu-label {
+#admin_sidemenu.is-active {
+  left: 0;
+  -webkit-transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out;
+}
+
+#admin_sidemenu .menu .menu-label {
   margin-left: 5px;
+}
+
+@media screen and (min-width: 1088px) {
+  #admin_sidemenu {
+    left: 0;
+  }
+}
+
+#slideout-button {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#slideout-button.is-active {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .management-area {
@@ -18049,7 +18092,7 @@ example <div class="p-t-10"  --- padding top 10px
 
 .submenu {
   max-height: 0;
-  overflow: hidden;
+  overflow: auto;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }

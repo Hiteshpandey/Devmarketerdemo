@@ -1,4 +1,4 @@
-.side-menu{
+/*.side-menu{
     position: fixed;
     height: 100vh;
     width: 200px;
@@ -6,6 +6,35 @@
     overflow-y: auto;
     .menu .menu-label{
         margin-left: 5px;
+    }
+}*/
+
+#admin_sidemenu{
+    position: fixed;
+    top: 4rem;
+    left: -200px;
+    bottom: 0;
+    width: 200px;
+    background-color: white;
+    overflow-y: scroll;
+    transition: left 0.3s ease-in-out;
+    &.is-active{
+        left: 0;
+        transition: left 0.3s ease-in-out;
+    }
+    .menu .menu-label{
+        margin-left: 5px;
+    }
+    @include desktop{
+        left:0;
+    }
+}
+
+#slideout-button{
+    transition: 0.3s;
+    &.is-active{
+        transition: 0.3s;
+        transform: rotateY(180deg);
     }
 }
 
@@ -22,7 +51,7 @@
 
 .submenu{
     max-height: 0;
-    overflow: hidden;
+    overflow: auto;
     transition: all 0.2s ease-in-out;
 }
 

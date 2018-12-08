@@ -1,4 +1,10 @@
 const accordions = document.getElementsByClassName('has-submenu')
+const slideoutbutton = document.getElementById('slideout-button')
+
+slideoutbutton.onclick = function(){
+    this.classList.toggle("is-active");
+    document.getElementById("admin_sidemenu").classList.toggle('is-active');
+}
 
 for(var i=0;i < accordions.length;i++){
     if(accordions[i].classList.contains('is-active'))

@@ -12,7 +12,7 @@
 //   }
 // catch(e){}
 
-//getting rid of jquery above
+//getting rid of jquery above 
 
 window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-Width'] = 'XMLHttpRequest';
